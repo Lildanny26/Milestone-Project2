@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios"
 
 export const Auth = () => {
     return (
@@ -30,9 +31,17 @@ const Register = () => {
 
     const onSubmit = async (event) => {
         event.preventDefault();
-
-
+        try {
+            await axios.post("http://localhost:3001/auth/register", {
+                username, 
+                password,
+            });
+            alert("Registration Completed! Now login.");
+        } catch (err) {
+            console.error(err);
+        }
     };
+
     return (
         <Form 
             username={username} 
@@ -69,7 +78,7 @@ const Form = ({
             <div className="form-group">
                 <label htmlFor="password"> Password: </label>
                 <input 
-                type="text" 
+                type="password" 
                 id="password" 
                 value={password}
                 onChange={(event) => setPassword(event.target.value)}
