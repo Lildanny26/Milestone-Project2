@@ -14,6 +14,20 @@ const Login = () => {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
 
+const onSubmit = async (event) => {
+    event.preventDefault
+    try {
+        const response = await axios.post("http://localhost:3001/auth/login", {
+            username, 
+            password,
+        });
+
+        console.log
+    } catch (err) {
+        console.error(err);
+    }
+};
+
     return (
         <Form 
             username={username} 
@@ -21,6 +35,7 @@ const Login = () => {
             password={password}
             setPassword={setPassword}
             label="Login"
+            onSubmit={onSubmit}
         />
     );
 };
