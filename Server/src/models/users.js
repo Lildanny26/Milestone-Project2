@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { SavedRecipes } from "../../../Client/src/pages/saved-recipes";
+//import { SavedRecipes } from "../../../Client/src/pages/saved-recipes.js";
 
 const UserSchema = new mongoose.Schema({
     username: { type: String, required: true, unique: true },

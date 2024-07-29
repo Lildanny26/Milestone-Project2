@@ -1,7 +1,8 @@
 import express from "express"
 import { RecipeModel } from "../models/Recipes.js";
-import { UserModel } from "../models/users.js";
-import { SavedRecipes } from "../../../Client/src/pages/saved-recipes.js";
+import { UserModel } from "../models/Users.js";
+//import { SavedRecipes } from "../../../Client/src/pages/saved-recipes.js";
+import { verifyToken } from "./users.js";
 
 const router = express.Router();
 
